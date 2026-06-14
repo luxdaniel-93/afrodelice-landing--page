@@ -1,18 +1,57 @@
-/* AFD-25 : création de la section services */
+
+/*AFD-1 : Styles Menu*/
+
+
+
+
+
+
+
+/*AFD-2 : Styles Bannière*/
+
+
+
+
+
+
+
+
+
+/*AFD-3 : Styles Plats*/
+
+
+
+
+
+
+
+/*AFD-4 : Styles Services*/
+
 
 :root{
-    --cream: #FBF2E4;
+  
     --charcoal: #2A2118;
     --terracotta: #D9622B;
     --gold: #E0A526;
     --deepgreen: #2F4A3E;
     --line: rgba(42,33,24,0.12);
+
+    /* Couleur de fond propre à chaque section */
+    --bg-menu: #1a1a1a;       /* menu / header */
+    --bg-services: #FBF2E4;   /* crème clair  */
+    --bg-galeries: #2F4A3E;   /* vert profond */
   }
   
   .services{
+    background: var(--bg-services);
     padding: 5rem 1.5rem;
+  }
+
+  /* contenu recentré (le fond, lui, reste pleine largeur) */
+  .services__header,
+  .services__grid{
     max-width: 1100px;
-    margin: 0 auto;
+    margin-inline: auto;
   }
   
   .services__header{
@@ -205,3 +244,38 @@
     .service-card{ animation: none; opacity: 1; transform: none; }
     .service-card, .service-card__icon, .service-card svg{ transition: none; }
   }
+
+
+
+
+
+
+
+/*AFD-5 : Styles Galerie*/
+
+
+
+
+
+
+/*AFD-6 : Styles Réservation*/
+
+
+
+
+
+
+
+
+/*AFD-7 : Styles Contact*/
+
+
+
+
+
+
+
+
+
+
+/*Footer*/
