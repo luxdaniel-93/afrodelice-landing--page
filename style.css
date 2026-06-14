@@ -1,4 +1,6 @@
 
+/*AFD-1 : Styles Menu*/
+
 :root{  --cream: #111111; --cream-scroll:#1a1a1a; --accent:goldenrod; --text-dark:white; --text-muted: rgba(255, 255, 255, 0,45); --nav-height:68px; --sidbar-width:280px; --easing:cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -52,52 +54,29 @@ nav ul li a::after {display: none; }
 nav ul li a.is-active { color: rgb(38, 37, 33); background: rgba(218, 165, 32, 0.08) ; border-left: 3px solid goldenrod; padding-left: 21px;} }
 
 @media( prefers-reduced-motion: reduce){*, *::before *::after{transition-duration: 0.01ms !important;}} 
-=======
 
-.galeries{
-     text-align: center;
-    margin-top: 100px;
-    padding: 20px;
-}
-.btn_gallery{
-    display: inline-block;
-    margin-top: 20px;
-    padding: 12px 24px;
-    background-color: #d35400;
-    color: white;
-    text-decoration: none;
-    border-radius: 8px;
-    transition: 0.3s ease;
-}
-.btn_gallery:hover{
-    background-color: #e67e22;
-    transform: scale(1.05);
-}
 
-.galeries h2{
-    text-align: center;
-    margin-bottom: 30px; 
-}
-.galeries_grid{
-    display: grid;
-    grid-template-columns: repeat(4 , 1fr);
-    gap: 20px;
-}
-.galeries_grid img{
-     opacity: 1;
-    transform: translateY(30px);
-    width: 100%;
-    height: 250px;
-    object-fit: cover;
-    border-radius: 10px;
-     box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-     transition: all 0.8s ease;
-}
-.galeries_grid img:hover{
-      transform: translateY(0) scale(1.05);
-      box-shadow: 0 8px 20px rgba(0,0,0,0.3);
-}
-.galeries_grid img.show{
-    opacity: 1;
-    transform: translateY(0);
-}
+
+/*AFD-2 : Styles Bannière*/
+
+
+
+/*AFD-3 : Styles Plats*/
+
+
+/*AFD-4 : Styles Services*/
+
+
+
+/*AFD-5 : Styles Galerie*/
+
+
+
+/*AFD-6 : Styles Réservation*/
+
+
+
+/*AFD-7 : Styles Contact*/
+
+
+/*Footer*/
