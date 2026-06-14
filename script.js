@@ -70,6 +70,8 @@ window.addEventListener('resize', () => {
 
 
 
+
+
 /**AFD-2 : Section Bannière**/
 
 
