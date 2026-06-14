@@ -15,8 +15,6 @@
 
   
 
-
-  
 <!-- AFD-1 : Section Menu -->
   <header>
         <nav>
@@ -117,14 +115,75 @@
     </div>
   </section>
 
- <!-- AFD-5 : Section Galerie -->
-
-
-
- <!-- AFD-4 : Section Services -->
 
 
  <!-- AFD-5 : Section Galerie -->
+  /*AFD-5 : Styles Galerie*/
+
+        <section class="galeries">
+            <h1>Bienvenue dans notre Galeries</h1>
+
+            <div class="galeries_grid">
+                <!-- Les 8 photos visibles directement -->
+                <img src="assets/african_food.jpg" alt="Plat africain">
+                <img src="assets/attiékè_côtedivoire.png" alt="Attiéké de Côte d'Ivoire">
+                <img src="assets/bomiwo_du_benin.jpg" alt="Bomiwo du Bénin">
+                <img src="assets/special_dèguè_niger.jpg" alt="Dèguè du Niger">
+                <img src="assets/ouest_africanspeciality1.jpg" alt="Spécialité ouest-africaine">
+                <img src="assets/central_africanspeciality.jpg" alt="Spécialité d'Afrique centrale">
+                <img src="assets/africanspeciality1.jpg" alt="Spécialité africaine 1">
+                <img src="assets/africanspeciality2.jpg" alt="Spécialité africaine 2">
+
+                <!-- Les photos cachées (affichées au clic sur "Voir plus") -->
+                <img class="cachee" src="assets/africanspeciality3.jpg" alt="Spécialité africaine 3">
+                <img class="cachee" src="assets/original-speciality1.jpg" alt="Spécialité originale 1">
+                <img class="cachee" src="assets/original-speciality2.jpg" alt="Spécialité originale 2">
+                <img class="cachee" src="assets/ouest_africanspeciality2.jpg" alt="Spécialité ouest-africaine 2">
+                <img class="cachee" src="assets/ouest_africanspeciality3.jpg" alt="Spécialité ouest-africaine 3">
+                <img class="cachee" src="assets/west&amp;ouest_africanspeciality.jpg" alt="Spécialité ouest-africaine">
+                <img class="cachee" src="assets/west&amp;ouest_africanspeciality1.jpg" alt="Spécialité ouest-africaine">
+                <img class="cachee" src="assets/west_africanspeciality1.jpg" alt="Spécialité ouest-africaine">
+            </div>
+
+            <button class="btn-voir-plus" onclick="voirPlus()">Voir plus</button>
+        </section>
+
+        <div id="lightbox" onclick="fermerImage()">
+            <img id="lightbox-img" src="" alt="Image agrandie">
+        </div>
+
+        <!-- Petit script pour la galerie -->
+        <script>
+            // Bouton Voir plus / Réduire
+            function voirPlus() {
+                const grille = document.querySelector('.galeries_grid');
+                const bouton = document.querySelector('.btn-voir-plus');
+
+                grille.classList.toggle('tout-voir');
+
+                if (grille.classList.contains('tout-voir')) {
+                    bouton.textContent = 'Réduire';
+                } else {
+                    bouton.textContent = 'Voir plus';
+                }
+            }
+
+            // Afficher une image en grand quand on clique dessus
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImg = document.getElementById('lightbox-img');
+
+            document.querySelectorAll('.galeries_grid img').forEach(function (image) {
+                image.onclick = function () {
+                    lightboxImg.src = image.src;
+                    lightbox.classList.add('ouvert');
+                };
+            });
+
+            function fermerImage() {
+                lightbox.classList.remove('ouvert');
+            }
+        </script>
+
 
    
  <!-- AFD-6 : Section Réservation -->
@@ -165,9 +224,7 @@
 
 
 
- <!-- AFD-7 : Section Contact -->
-
- <!-- Footer -->
+ <!-- AFD-7 : Section Contact/Footer -->
 
     <footer class="bg-dark text-white text-center py-4 mt-5">
             <h3>Contactez-nous</h3>
@@ -197,9 +254,5 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="script.js"></script>
 
-
 </body>
 </html>
-
-
- <!-- Footer -->
