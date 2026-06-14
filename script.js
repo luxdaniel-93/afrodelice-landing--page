@@ -76,7 +76,6 @@ window.addEventListener('resize', () => {
 
 
  /**AFD-4 : Section Services**/
- /**AFD-4 : Section Services**/
 
 
 
@@ -91,9 +90,11 @@ document.addEventListener("DOMContentLoaded", function() {
   form.addEventListener('submit', function(e) {
     e.preventDefault();
 
+
     let name = document.getElementById('name').value.trim();
     let email = document.getElementById('email').value.trim();
     let guests = parseInt(document.getElementById('guests').value, 10);
+
 
     // Vérification des champs
     if (name === "" || email === "" || isNaN(guests) || guests < 1) {
@@ -101,12 +102,14 @@ document.addEventListener("DOMContentLoaded", function() {
       return;
     }
 
+
     // Vérification email avec regex simple
     let emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailPattern.test(email)) {
       showMessage("Veuillez entrer un email valide.", "warning");
       return;
     }
+
 
     showMessage("Réservation envoyée avec succès !", "success");
     form.reset(); // On va réinitialiser le formulaire après succès
@@ -120,7 +123,7 @@ document.addEventListener("DOMContentLoaded", function() {
     }, 3000);
   }
 });
-=======
+
 const header   = document.querySelector('header');
 const menuBtn  = document.getElementById('menu-button');
 const navMenu  = document.querySelector('nav ul');
@@ -179,6 +182,7 @@ function updateActiveLink() {
 }
 window.addEventListener('scroll', updateActiveLink, { passive: true });
 updateActiveLink();
+
 
 
 window.addEventListener('resize', () => {
