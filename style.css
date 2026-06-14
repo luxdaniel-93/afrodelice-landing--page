@@ -1,0 +1,26 @@
+
+.galeries{
+    padding: 20px;
+}
+.galeries h2{
+    text-align: center;
+    margin-bottom: 20px; 
+}
+.galeries_grid{
+    display: grid;
+    grid-template-columns: repeat(4 , 1fr);
+    gap: 20px;
+}
+.galeries_grid img{
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+.galeries_grid img{
+     transition: transform 0.3s ease;
+}
+.galeries_grid img:hover{
+     transform: scale(1.05);
+
+}
