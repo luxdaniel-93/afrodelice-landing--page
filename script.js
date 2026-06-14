@@ -1,75 +1,7 @@
 /**AFD-1 : Section Menu**/
 
-const header   = document.querySelector('header');
-const menuBtn  = document.getElementById('menu-button');
-const navMenu  = document.querySelector('nav ul');
-const navLinks = document.querySelectorAll('nav ul li a');
-const overlay  = document.getElementById('sidebar-overlay');
-
-
-function handleScroll() {
-  header.classList.toggle('is-scrolled', window.scrollY > 50);
-}
-window.addEventListener('scroll', handleScroll, { passive: true });
-handleScroll();
-
-function openMenu() {
-  menuBtn.classList.add('is-open');
-  navMenu.classList.add('mobile-open');
-  if (overlay) overlay.classList.add('is-open');
-  menuBtn.setAttribute('aria-expanded', 'true');
-  menuBtn.setAttribute('aria-label', 'Fermer le menu');
-  document.body.style.overflow = 'hidden';
-}
-
-function closeMenu() {
-  menuBtn.classList.remove('is-open');
-  navMenu.classList.remove('mobile-open');
-  if (overlay) overlay.classList.remove('is-open');
-  menuBtn.setAttribute('aria-expanded', 'false');
-  menuBtn.setAttribute('aria-label', 'Ouvrir le menu');
-  document.body.style.overflow = '';
-}
-
-menuBtn.addEventListener('click', () => {
-  menuBtn.classList.contains('is-open') ? closeMenu() : openMenu();
-});
-
-
-if (overlay) overlay.addEventListener('click', closeMenu);
-
-
-navLinks.forEach(link => {
-  link.addEventListener('click', () => closeMenu());
-});
-
-const sections = document.querySelectorAll('section[id]');
-
-function updateActiveLink() {
-  let activeId = '';
-  sections.forEach(section => {
-    if (window.scrollY >= section.offsetTop - 100) {
-      activeId = '#' + section.id;
-    }
-  });
-  navLinks.forEach(link => {
-    link.classList.toggle('is-active', link.getAttribute('href') === activeId);
-  });
-}
-window.addEventListener('scroll', updateActiveLink, { passive: true });
-updateActiveLink();
-
-
-window.addEventListener('resize', () => {
-  if (window.innerWidth > 900) closeMenu();
-});
-
-
-
 
 /**AFD-2 : Section Bannière**/
-
-
 
 
 /**AFD-3 : Section Plats**/
@@ -78,116 +10,234 @@ window.addEventListener('resize', () => {
  /**AFD-4 : Section Services**/
 
 
+:root{
+  
+    --charcoal: #2A2118;
+    --terracotta: #D9622B;
+    --gold: #E0A526;
+    --deepgreen: #2F4A3E;
+    --line: rgba(42,33,24,0.12);
+
+    /* Couleur de fond propre à chaque section */
+    --bg-menu: #1a1a1a;       /* menu / header */
+    --bg-services: #FBF2E4;   /* crème clair  */
+    --bg-galeries: #2F4A3E;   /* vert profond */
+  }
+  
+  .services{
+    background: var(--bg-services);
+    padding: 5rem 1.5rem;
+  }
+
+  /* contenu recentré (le fond, lui, reste pleine largeur) */
+  .services__header,
+  .services__grid{
+    max-width: 1100px;
+    margin-inline: auto;
+  }
+  
+  .services__header{
+    text-align: center;
+    margin-bottom: 3.5rem;
+  }
+  
+  .services__eyebrow{
+    font-family: 'Work Sans', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--terracotta);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+  }
+  
+  .services__eyebrow::before,
+  .services__eyebrow::after{
+    content: "";
+    display: block;
+    width: 28px;
+    height: 1px;
+    background: var(--terracotta);
+  }
+  
+  .services__title{
+    font-family: 'Fraunces', serif;
+    font-weight: 600;
+    font-size: clamp(2rem, 5vw, 3.2rem);
+    margin-top: 0.8rem;
+    color: var(--charcoal);
+  }
+  
+  .services__subtitle{
+    margin-top: 0.9rem;
+    font-size: 1.05rem;
+    color: rgba(42,33,24,0.65);
+    max-width: 540px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .services__grid{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+  }
+  
+  .service-card{
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: 18px;
+    padding: 2rem 1.5rem;
+    text-align: left;
+  }
+  
+  .service-card__icon{
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: var(--deepgreen);
+    margin-bottom: 1.4rem;
+  }
+  
+  .service-card__title{
+    font-family: 'Fraunces', serif;
+    font-weight: 600;
+    font-size: 1.2rem;
+    margin-bottom: 0.6rem;
+  }
+  
+  .service-card__text{
+    font-size: 0.92rem;
+    line-height: 1.55;
+    color: rgba(42,33,24,0.65);
+  }
+  /* AFD-26 : icônes des services */
+
+.service-card__icon{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .service-card__icon svg{
+    width: 26px;
+    height: 26px;
+    stroke: var(--cream);
+    fill: none;
+    stroke-width: 1.8;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+  /* AFD-27 : responsive */
+
+@media (max-width: 980px){
+    .services__grid{
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  @media (max-width: 600px){
+    .services{
+      padding: 3.5rem 1.25rem;
+    }
+    .services__grid{
+      grid-template-columns: 1fr;
+      gap: 1.1rem;
+    }
+    .services__eyebrow::before,
+    .services__eyebrow::after{
+      width: 18px;
+    }
+  }
+  /* AFD-28 : animations */
+
+.service-card{
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+  }
+  
+  .service-card::after{
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, var(--terracotta), var(--gold));
+    opacity: 0;
+    transition: opacity 0.35s ease;
+    z-index: 0;
+  }
+  
+  .service-card:hover{
+    transform: translateY(-6px);
+    box-shadow: 0 18px 40px rgba(42,33,24,0.12);
+    border-color: transparent;
+  }
+  
+  .service-card:hover::after{
+    opacity: 1;
+  }
+  
+  .service-card > *{
+    position: relative;
+    z-index: 1;
+    transition: color 0.35s ease;
+  }
+  
+  .service-card__icon{
+    transition: background 0.35s ease, transform 0.35s ease;
+  }
+  
+  .service-card:hover .service-card__icon{
+    background: #fff;
+    transform: rotate(-8deg) scale(1.05);
+  }
+  
+  .service-card:hover .service-card__icon svg{
+    stroke: var(--terracotta);
+  }
+  
+  .service-card__icon svg{
+    transition: stroke 0.35s ease;
+  }
+  
+  .service-card:hover .service-card__title,
+  .service-card:hover .service-card__text{
+    color: #fff;
+  }
+  
+  /* Animation à l'apparition */
+  .service-card{
+    opacity: 0;
+    transform: translateY(24px);
+    animation: services-reveal 0.6s ease forwards;
+  }
+  .service-card:nth-child(1){ animation-delay: 0.05s; }
+  .service-card:nth-child(2){ animation-delay: 0.15s; }
+  .service-card:nth-child(3){ animation-delay: 0.25s; }
+  .service-card:nth-child(4){ animation-delay: 0.35s; }
+  
+  @keyframes services-reveal{
+    to{ opacity: 1; transform: translateY(0); }
+  }
+  
+  @media (prefers-reduced-motion: reduce){
+    .service-card{ animation: none; opacity: 1; transform: none; }
+    .service-card, .service-card__icon, .service-card svg{ transition: none; }
+  }
+
+
+
 
 /**AFD-5 : Section Galerie**/
 
 /**AFD-6 : Section Réservation**/
 
-document.addEventListener("DOMContentLoaded", function() {
-  const form = document.getElementById('reservationForm');
-  const messageBox = document.getElementById('formMessage');
-
-  form.addEventListener('submit', function(e) {
-    e.preventDefault();
-
-    let name = document.getElementById('name').value.trim();
-    let email = document.getElementById('email').value.trim();
-    let guests = parseInt(document.getElementById('guests').value, 10);
-
-    // Vérification des champs
-    if (name === "" || email === "" || isNaN(guests) || guests < 1) {
-      showMessage("Veuillez remplir correctement tous les champs.", "danger");
-      return;
-    }
-
-    // Vérification email avec regex simple
-    let emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailPattern.test(email)) {
-      showMessage("Veuillez entrer un email valide.", "warning");
-      return;
-    }
-
-    showMessage("Réservation envoyée avec succès !", "success");
-    form.reset(); // On va réinitialiser le formulaire après succès
-  });
-
-  function showMessage(text, type) {
-    messageBox.innerHTML = `<div class="alert alert-${type}" role="alert">${text}</div>`;
-    // On supprime le message après 3 secondes
-    setTimeout(() => {
-      messageBox.innerHTML = "";
-    }, 3000);
-  }
-});
-=======
-const header   = document.querySelector('header');
-const menuBtn  = document.getElementById('menu-button');
-const navMenu  = document.querySelector('nav ul');
-const navLinks = document.querySelectorAll('nav ul li a');
-const overlay  = document.getElementById('sidebar-overlay');
-
-
-function handleScroll() {
-  header.classList.toggle('is-scrolled', window.scrollY > 50);
-}
-window.addEventListener('scroll', handleScroll, { passive: true });
-handleScroll();
-
-function openMenu() {
-  menuBtn.classList.add('is-open');
-  navMenu.classList.add('mobile-open');
-  if (overlay) overlay.classList.add('is-open');
-  menuBtn.setAttribute('aria-expanded', 'true');
-  menuBtn.setAttribute('aria-label', 'Fermer le menu');
-  document.body.style.overflow = 'hidden';
-}
-
-function closeMenu() {
-  menuBtn.classList.remove('is-open');
-  navMenu.classList.remove('mobile-open');
-  if (overlay) overlay.classList.remove('is-open');
-  menuBtn.setAttribute('aria-expanded', 'false');
-  menuBtn.setAttribute('aria-label', 'Ouvrir le menu');
-  document.body.style.overflow = '';
-}
-
-menuBtn.addEventListener('click', () => {
-  menuBtn.classList.contains('is-open') ? closeMenu() : openMenu();
-});
-
-
-if (overlay) overlay.addEventListener('click', closeMenu);
-
-
-navLinks.forEach(link => {
-  link.addEventListener('click', () => closeMenu());
-});
-
-const sections = document.querySelectorAll('section[id]');
-
-function updateActiveLink() {
-  let activeId = '';
-  sections.forEach(section => {
-    if (window.scrollY >= section.offsetTop - 100) {
-      activeId = '#' + section.id;
-    }
-  });
-  navLinks.forEach(link => {
-    link.classList.toggle('is-active', link.getAttribute('href') === activeId);
-  });
-}
-window.addEventListener('scroll', updateActiveLink, { passive: true });
-updateActiveLink();
-
-
-window.addEventListener('resize', () => {
-  if (window.innerWidth > 900) closeMenu();
-});
 
 
 
  /**AFD-7 : Section Contact**:
-
 
 
 /**Footer**/
