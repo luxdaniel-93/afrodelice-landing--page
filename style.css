@@ -1,7 +1,43 @@
 
+/*AFD-1 : Styles Menu*/
+
+
+
+
+
+
+
+/*AFD-2 : Styles Bannière*/
+
+
+
+
+
+
+
+
+
+/*AFD-3 : Styles Plats*/
+
+
+
+
+
+
+
+/*AFD-4 : Styles Services*/
+
+
+
+
+
+
+
+
 /*AFD-5 : Styles Galerie*/
 
 .galeries{
+    background: var(--bg-galeries);
     padding: 40px 20px;
 }
 
@@ -130,3 +166,27 @@
         grid-template-columns: 1fr;
     }
 }
+
+
+
+/*AFD-6 : Styles Réservation*/
+
+
+
+
+
+
+
+
+/*AFD-7 : Styles Contact*/
+
+
+
+
+
+
+
+
+
+
+/*Footer*/
