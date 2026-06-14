@@ -1,3 +1,73 @@
+/**AFD-1 : Section Menu**/
+
+
+
+
+
+
+
+
+/**AFD-2 : Section Bannière**/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/**AFD-3 : Section Plats**/
+
+
+
+
+
+
+
+
+
+
+
+
+ /**AFD-4 : Section Services**/
+
+
+
+
+
+
+
+
+
+
+
+/**AFD-5 : Section Galerie**/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ /**AFD-6 : Section Réservation**/
+
 document.addEventListener("DOMContentLoaded", function() {
   const form = document.getElementById('reservationForm');
   const messageBox = document.getElementById('formMessage');
@@ -34,3 +104,27 @@ document.addEventListener("DOMContentLoaded", function() {
     }, 3000);
   }
 });
+
+
+
+
+
+
+
+
+
+ /**AFD-7 : Section Contact**:
+
+
+
+
+
+
+
+
+
+
+
+
+
+/**Footer**/
