@@ -2,8 +2,8 @@
 /*AFD-1 : Styles Menu*/
 
 
-/*AFD-2 : Styles Bannière*/
 
+/*AFD-2 : Styles Bannière*/
 
 
 /*AFD-3 : Styles Plats*/
@@ -15,7 +15,9 @@
 /*AFD-5 : Styles Galerie*/
 
 
+
 /*AFD-6 : Styles Réservation*/
+
 #reservation{
   max-width: 720px;
   margin: 4rem auto;
@@ -87,7 +89,11 @@
   transform: scale(1.05);
 }
 
+
+
 /*AFD-7 : Styles Contact*/
+
+
 body {
   font-family: 'Segoe UI', sans-serif;
   background: #fdfdfd;
