@@ -17,3 +17,10 @@
     object-fit: cover;
     border-radius: 10px;
 }
+.galeries_grid img{
+     transition: transform 0.3s ease;
+}
+.galeries_grid img:hover{
+     transform: scale(1.05);
+
+}
