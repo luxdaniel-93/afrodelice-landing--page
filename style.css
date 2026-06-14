@@ -109,3 +109,24 @@
     stroke-linecap: round;
     stroke-linejoin: round;
   }
+  /* AFD-27 : responsive */
+
+@media (max-width: 980px){
+    .services__grid{
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  @media (max-width: 600px){
+    .services{
+      padding: 3.5rem 1.25rem;
+    }
+    .services__grid{
+      grid-template-columns: 1fr;
+      gap: 1.1rem;
+    }
+    .services__eyebrow::before,
+    .services__eyebrow::after{
+      width: 18px;
+    }
+  }
