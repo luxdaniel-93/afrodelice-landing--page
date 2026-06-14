@@ -1,0 +1,23 @@
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: #fdfdfd;
+}
+
+h2 {
+  color: #6a0dad;
+}
+
+footer a {
+  text-decoration: none;
+  font-weight: bold;
+}
+
+footer a:hover {
+  text-decoration: underline;
+  color: #fff;
+}
+
+footer a:hover i {
+  color: #fff;
+}
+
