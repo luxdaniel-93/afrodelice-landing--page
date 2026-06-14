@@ -130,3 +130,78 @@
       width: 18px;
     }
   }
+  /* AFD-28 : animations */
+
+.service-card{
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+  }
+  
+  .service-card::after{
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, var(--terracotta), var(--gold));
+    opacity: 0;
+    transition: opacity 0.35s ease;
+    z-index: 0;
+  }
+  
+  .service-card:hover{
+    transform: translateY(-6px);
+    box-shadow: 0 18px 40px rgba(42,33,24,0.12);
+    border-color: transparent;
+  }
+  
+  .service-card:hover::after{
+    opacity: 1;
+  }
+  
+  .service-card > *{
+    position: relative;
+    z-index: 1;
+    transition: color 0.35s ease;
+  }
+  
+  .service-card__icon{
+    transition: background 0.35s ease, transform 0.35s ease;
+  }
+  
+  .service-card:hover .service-card__icon{
+    background: #fff;
+    transform: rotate(-8deg) scale(1.05);
+  }
+  
+  .service-card:hover .service-card__icon svg{
+    stroke: var(--terracotta);
+  }
+  
+  .service-card__icon svg{
+    transition: stroke 0.35s ease;
+  }
+  
+  .service-card:hover .service-card__title,
+  .service-card:hover .service-card__text{
+    color: #fff;
+  }
+  
+  /* Animation à l'apparition */
+  .service-card{
+    opacity: 0;
+    transform: translateY(24px);
+    animation: services-reveal 0.6s ease forwards;
+  }
+  .service-card:nth-child(1){ animation-delay: 0.05s; }
+  .service-card:nth-child(2){ animation-delay: 0.15s; }
+  .service-card:nth-child(3){ animation-delay: 0.25s; }
+  .service-card:nth-child(4){ animation-delay: 0.35s; }
+  
+  @keyframes services-reveal{
+    to{ opacity: 1; transform: translateY(0); }
+  }
+  
+  @media (prefers-reduced-motion: reduce){
+    .service-card{ animation: none; opacity: 1; transform: none; }
+    .service-card, .service-card__icon, .service-card svg{ transition: none; }
+  }
