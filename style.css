@@ -1,48 +1,132 @@
 
+/*AFD-5 : Styles Galerie*/
+
 .galeries{
-     text-align: center;
-    margin-top: 100px;
-    padding: 20px;
-}
-.btn_gallery{
-    display: inline-block;
-    margin-top: 20px;
-    padding: 12px 24px;
-    background-color: #d35400;
-    color: white;
-    text-decoration: none;
-    border-radius: 8px;
-    transition: 0.3s ease;
-}
-.btn_gallery:hover{
-    background-color: #e67e22;
-    transform: scale(1.05);
+    padding: 40px 20px;
 }
 
-.galeries h2{
+
+.galeries h1{
     text-align: center;
-    margin-bottom: 30px; 
+    margin-bottom: 30px;
 }
+
 .galeries_grid{
     display: grid;
     grid-template-columns: repeat(4 , 1fr);
     gap: 20px;
 }
+
 .galeries_grid img{
-     opacity: 1;
-    transform: translateY(30px);
     width: 100%;
     height: 250px;
     object-fit: cover;
     border-radius: 10px;
-     box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-     transition: all 0.8s ease;
+    
+    transition: transform 0.4s ease, box-shadow 0.4s ease, filter 0.4s ease;
+    animation: apparition 0.6s ease both;
 }
+
 .galeries_grid img:hover{
-      transform: translateY(0) scale(1.05);
-      box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+    transform: translateY(-8px) scale(1.04);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+    filter: brightness(1.08);
+    cursor: pointer;
 }
-.galeries_grid img.show{
-    opacity: 1;
-    transform: translateY(0);
+
+.galeries_grid img:nth-child(1){ animation-delay: 0.1s; }
+.galeries_grid img:nth-child(2){ animation-delay: 0.2s; }
+.galeries_grid img:nth-child(3){ animation-delay: 0.3s; }
+.galeries_grid img:nth-child(4){ animation-delay: 0.4s; }
+.galeries_grid img:nth-child(5){ animation-delay: 0.5s; }
+.galeries_grid img:nth-child(6){ animation-delay: 0.6s; }
+.galeries_grid img:nth-child(7){ animation-delay: 0.7s; }
+.galeries_grid img:nth-child(8){ animation-delay: 0.8s; }
+
+.galeries_grid .cachee{
+    display: none;
+}
+
+.galeries_grid.tout-voir .cachee{
+    display: block;
+    animation: apparition 0.5s ease both;
+}
+
+
+@keyframes apparition {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Bouton "Voir plus" */
+.btn-voir-plus{
+    display: block;
+    margin: 30px auto 0;
+    padding: 12px 30px;
+    background-color: #e67e22;
+    color: #fff;
+    font-size: 16px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+.btn-voir-plus:hover{
+    background-color: #cf6610;
+}
+
+/* Fenêtre d'agrandissement*/
+#lightbox{
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.85);
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+    cursor: pointer;
+}
+
+
+#lightbox.ouvert{
+    display: flex;
+}
+#lightbox img{
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 10px;
+    /* Petit effet de zoom à l'ouverture */
+    animation: zoomImage 0.3s ease;
+}
+
+@keyframes zoomImage {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+        /* Responsive*/
+@media screen and (max-width: 768px) {
+    .galeries_grid{
+        grid-template-columns: repeat(2 , 1fr);
+    }
+}
+@media screen and (max-width: 480px) {
+    .galeries_grid{
+        grid-template-columns: 1fr;
+    }
 }
