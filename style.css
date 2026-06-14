@@ -21,3 +21,53 @@ footer a:hover i {
   color: #fff;
 }
 
+/* Responsive */
+@media (max-width: 768px) {
+  #reservationForm {
+    flex-direction: column;
+  }
+  iframe {
+    height: 150px;
+  }
+}
+
+/* Animations */
+#reservationForm input:focus {
+  border-color: #6a0dad;
+  box-shadow: 0 0 8px rgba(106, 13, 173, 0.5);
+  transition: 0.3s;
+}
+
+#reservationForm button {
+  transition: transform 0.2s ease-in-out;
+}
+
+#reservationForm button:hover {
+  transform: scale(1.05);
+}
+
+/* Animation au survol des icônes */
+footer a i {
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+footer a:hover i {
+  transform: scale(1.2) rotate(10deg);
+  color: #ffc107; 
+}
+
+/* Apparition progressive du footer */
+footer {
+  animation: fadeInUp 1s ease-in-out;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
