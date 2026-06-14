@@ -1,0 +1,94 @@
+/* AFD-25 : création de la section services */
+
+:root{
+    --cream: #FBF2E4;
+    --charcoal: #2A2118;
+    --terracotta: #D9622B;
+    --gold: #E0A526;
+    --deepgreen: #2F4A3E;
+    --line: rgba(42,33,24,0.12);
+  }
+  
+  .services{
+    padding: 5rem 1.5rem;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+  
+  .services__header{
+    text-align: center;
+    margin-bottom: 3.5rem;
+  }
+  
+  .services__eyebrow{
+    font-family: 'Work Sans', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--terracotta);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+  }
+  
+  .services__eyebrow::before,
+  .services__eyebrow::after{
+    content: "";
+    display: block;
+    width: 28px;
+    height: 1px;
+    background: var(--terracotta);
+  }
+  
+  .services__title{
+    font-family: 'Fraunces', serif;
+    font-weight: 600;
+    font-size: clamp(2rem, 5vw, 3.2rem);
+    margin-top: 0.8rem;
+    color: var(--charcoal);
+  }
+  
+  .services__subtitle{
+    margin-top: 0.9rem;
+    font-size: 1.05rem;
+    color: rgba(42,33,24,0.65);
+    max-width: 540px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .services__grid{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+  }
+  
+  .service-card{
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: 18px;
+    padding: 2rem 1.5rem;
+    text-align: left;
+  }
+  
+  .service-card__icon{
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: var(--deepgreen);
+    margin-bottom: 1.4rem;
+  }
+  
+  .service-card__title{
+    font-family: 'Fraunces', serif;
+    font-weight: 600;
+    font-size: 1.2rem;
+    margin-bottom: 0.6rem;
+  }
+  
+  .service-card__text{
+    font-size: 0.92rem;
+    line-height: 1.55;
+    color: rgba(42,33,24,0.65);
+  }
