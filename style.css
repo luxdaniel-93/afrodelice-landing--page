@@ -1,3 +1,93 @@
+
+/*AFD-1 : Styles Menu*/
+
+
+/*AFD-2 : Styles Bannière*/
+
+
+
+/*AFD-3 : Styles Plats*/
+
+
+/*AFD-4 : Styles Services*/
+
+
+/*AFD-5 : Styles Galerie*/
+
+
+/*AFD-6 : Styles Réservation*/
+#reservation{
+  max-width: 720px;
+  margin: 4rem auto;
+  padding: 2.5rem clamp(1.25rem, 4vw, 2.5rem);
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 18px 50px rgba(42,33,24,0.12);
+}
+
+#reservation h2{
+  font-family: 'Fraunces', serif;
+  font-weight: 600;
+  color: var(--charcoal);
+}
+
+/* labels lisibles (au lieu du blanc hérité du body) */
+#reservation .form-label{
+  color: var(--charcoal);
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+#reservation .form-control{
+  color: var(--charcoal);
+  border-color: var(--line);
+  padding: 0.7rem 0.9rem;
+}
+
+#reservation .form-control:focus{
+  border-color: var(--gold);
+  box-shadow: 0 0 0 3px rgba(224,165,38,0.25);
+}
+
+#reservation .btn-success{
+  background: var(--deepgreen);
+  border-color: var(--deepgreen);
+  padding: 0.8rem;
+  font-weight: 600;
+}
+
+#reservation .btn-success:hover{
+  background: #25382f;
+  border-color: #25382f;
+}
+
+
+/* Responsive */
+@media (max-width: 768px) {
+  #reservationForm {
+    flex-direction: column;
+  }
+  iframe {
+    height: 150px;
+  }
+}
+
+/* Animations */
+#reservationForm input:focus {
+  border-color: var(--gold);
+  box-shadow: 0 0 8px rgba(224, 165, 38, 0.5);
+  transition: 0.3s;
+}
+
+#reservationForm button {
+  transition: transform 0.2s ease-in-out;
+}
+
+#reservationForm button:hover {
+  transform: scale(1.05);
+}
+
+/*AFD-7 : Styles Contact*/
 body {
   font-family: 'Segoe UI', sans-serif;
   background: #fdfdfd;
@@ -19,31 +109,6 @@ footer a:hover {
 
 footer a:hover i {
   color: #fff;
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-  #reservationForm {
-    flex-direction: column;
-  }
-  iframe {
-    height: 150px;
-  }
-}
-
-/* Animations */
-#reservationForm input:focus {
-  border-color: #6a0dad;
-  box-shadow: 0 0 8px rgba(106, 13, 173, 0.5);
-  transition: 0.3s;
-}
-
-#reservationForm button {
-  transition: transform 0.2s ease-in-out;
-}
-
-#reservationForm button:hover {
-  transform: scale(1.05);
 }
 
 /* Animation au survol des icônes */
@@ -71,3 +136,6 @@ footer {
     transform: translateY(0);
   }
 }
+
+
+/*Footer*/
