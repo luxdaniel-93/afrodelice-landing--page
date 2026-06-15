@@ -2,7 +2,10 @@
 
 /*AFD-1 : Styles Menu*/
 
+
 /*AFD-2 : Styles Bannière*/
+
+
 
 
 /*AFD-3 : Styles Plats*/
@@ -185,6 +188,7 @@
       color: #D4A843;
     }
 
+
     .plat-price small {
       font-size: 11px;
       color: #7A5A3A;
@@ -202,77 +206,10 @@
       cursor: pointer;
       font-family: 'Inter', sans-serif;
       transition: background 0.2s, transform 0.15s;
-    }
-
-    .btn-reserver:hover {
-      background: #E8BC50;
-      transform: scale(1.05);
-    }
-
-    /* Carte masquée lors du filtre */
-    .plat-card--hidden {
-      display: none !important;
-    }
-
-    /* ============================
-       ANIMATION FADE-UP
-    ============================ */
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(24px); }
-      to   { opacity: 1; transform: translateY(0); }
-    }   
-    /* ============================
-       APPEL À L'ACTION
-    ============================ */
-    .plats-cta {
-      text-align: center;
-      margin-top: 52px;
-    }
-
-    .btn-carte-complete {
-      background: transparent;
-      border: 1.5px solid #D4A843;
-      color: #D4A843;
-      font-size: 14px;
-      font-family: 'Inter', sans-serif;
-      padding: 13px 32px;
-      border-radius: 6px;
-      cursor: pointer;
-      letter-spacing: 0.5px;
-      transition: background 0.25s, color 0.25s;
-      text-decoration: none;
-      display: inline-block;
-    }
-
-    .btn-carte-complete:hover {
-      background: #D4A843;
-      color: #1a0a00;
-    }
-
-    /* ============================
-       RESPONSIVE
-    ============================ */
-    @media (max-width: 480px) {
-      .plats-grid {
-        grid-template-columns: 1fr 1fr;
-        gap: 14px;
-      }
-      .plat-img-wrap { height: 130px; }
-    }
-
-    @media (max-width: 360px) {
-      .plats-grid { grid-template-columns: 1fr; }
-    }
-
-    /* Respect du mode réduit en animations */
-    @media (prefers-reduced-motion: reduce) {
-      .plat-card { animation: none; opacity: 1; transform: none; }
-      .plat-card:hover { transform: none; }
-      .plat-img-wrap img { transition: none; }
-    }
-
-
+      
+      
 /*AFD-4 : Styles Services*/
+
 
 
 
