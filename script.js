@@ -1,5 +1,5 @@
-/**AFD-1 : Section Menu**/
 
+/**AFD-1 : Section Menu**/
 
 
 
@@ -9,7 +9,6 @@
 
 
 /**AFD-3 : Section Plats**/
-
 /**
    * filterPlats — filtre les cartes par catégorie
    * @param {HTMLElement} btn  - le bouton cliqué
@@ -41,7 +40,8 @@
   }
 
 
-/**AFD-4 : Section Services**/
+
+ /**AFD-4 : Section Services**/
 
 
 
@@ -50,11 +50,9 @@
 /**AFD-6 : Section Réservation**/
 
 
-
-/**AFD-7 : Section Contact**:
-
-
+ /**AFD-7 : Section Contact**:
 
 
 
 /**Footer**/
+
