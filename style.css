@@ -1,48 +1,134 @@
 
+/*AFD-1 : Styles Menu*/
+
+
+
+/*AFD-2 : Styles Bannière*/
+
+
+
+
+/*AFD-3 : Styles Plats*/
+
+
+
+
+/*AFD-4 : Styles Services*/
+
+
+
+
+/*AFD-5 : Styles Galerie*/
+
 .galeries{
-     text-align: center;
-    margin-top: 100px;
-    padding: 20px;
-}
-.btn_gallery{
-    display: inline-block;
-    margin-top: 20px;
-    padding: 12px 24px;
-    background-color: #d35400;
-    color: white;
-    text-decoration: none;
-    border-radius: 8px;
-    transition: 0.3s ease;
-}
-.btn_gallery:hover{
-    background-color: #e67e22;
-    transform: scale(1.05);
+    background: var(--bg-galeries);
+    padding: 40px 20px;
 }
 
-.galeries h2{
+
+.galeries h1{
     text-align: center;
-    margin-bottom: 30px; 
+    margin-bottom: 30px;
 }
+
 .galeries_grid{
     display: grid;
-    grid-template-columns: repeat(4 , 1fr);
-    gap: 20px;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+    max-width: 1100px;
+    margin: 0 auto;
 }
+
 .galeries_grid img{
-     opacity: 1;
-    transform: translateY(30px);
     width: 100%;
-    height: 250px;
+    height: 220px;
     object-fit: cover;
     border-radius: 10px;
-     box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-     transition: all 0.8s ease;
+    cursor: pointer;
+    transition: transform 0.3s var(--easing);
 }
+
 .galeries_grid img:hover{
-      transform: translateY(0) scale(1.05);
-      box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+    transform: scale(1.03);
 }
-.galeries_grid img.show{
-    opacity: 1;
-    transform: translateY(0);
+
+.galeries_grid img.cachee{
+    display: none;
 }
+
+.galeries_grid.tout-voir img.cachee{
+    display: block;
+}
+
+.btn-voir-plus{
+    display: block;
+    margin: 30px auto 0;
+    padding: 12px 28px;
+    background: var(--gold);
+    color: var(--charcoal);
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.btn-voir-plus:hover{
+    transform: translateY(-2px);
+    background: #c9911f;
+}
+
+/* Lightbox */
+#lightbox{
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 999;
+    background: rgba(0, 0, 0, 0.85);
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    cursor: zoom-out;
+}
+
+#lightbox.ouvert{
+    display: flex;
+}
+
+#lightbox img{
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 8px;
+}
+
+@media (max-width: 980px){
+    .galeries_grid{ grid-template-columns: repeat(3, 1fr); }
+}
+
+@media (max-width: 600px){
+    .galeries_grid{ grid-template-columns: repeat(2, 1fr); }
+    .galeries_grid img{ height: 150px; }
+}
+
+
+/*AFD-6 : Styles Réservation*/
+
+
+
+
+
+
+
+
+/* Apparition progressive du footer */
+
+
+
+
+
+
+
+
+
+
+
