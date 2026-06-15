@@ -6,10 +6,7 @@
 /*AFD-2 : Styles Bannière*/
 
 
-
-
 /*AFD-3 : Styles Plats*/
-
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     /* ============================
@@ -206,19 +203,19 @@
       cursor: pointer;
       font-family: 'Inter', sans-serif;
       transition: background 0.2s, transform 0.15s;
-      
-      
+
 /*AFD-4 : Styles Services*/
-
-
-
 
 
 /*AFD-5 : Styles Galerie*/
 
 
+
 /*AFD-6 : Styles Réservation*/
 
 
+
 /*AFD-7 : Styles Contact/Footer*/
+
+
 
