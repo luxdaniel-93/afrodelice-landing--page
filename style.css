@@ -71,130 +71,13 @@ nav ul li a.is-active { color: rgb(38, 37, 33); background: rgba(218, 165, 32, 0
 
 /*AFD-6 : Styles Réservation*/
 
-#reservation{
-  max-width: 720px;
-  margin: 4rem auto;
-  padding: 2.5rem clamp(1.25rem, 4vw, 2.5rem);
-  background: #fff;
-  border-radius: 18px;
-  box-shadow: 0 18px 50px rgba(42,33,24,0.12);
-}
-
-#reservation h2{
-  font-family: 'Fraunces', serif;
-  font-weight: 600;
-  color: var(--charcoal);
-}
-
-/* labels lisibles (au lieu du blanc hérité du body) */
-#reservation .form-label{
-  color: var(--charcoal);
-  font-weight: 600;
-  font-size: 0.9rem;
-}
-
-#reservation .form-control{
-  color: var(--charcoal);
-  border-color: var(--line);
-  padding: 0.7rem 0.9rem;
-}
-
-#reservation .form-control:focus{
-  border-color: var(--gold);
-  box-shadow: 0 0 0 3px rgba(224,165,38,0.25);
-}
-
-#reservation .btn-success{
-  background: var(--deepgreen);
-  border-color: var(--deepgreen);
-  padding: 0.8rem;
-  font-weight: 600;
-}
-
-#reservation .btn-success:hover{
-  background: #25382f;
-  border-color: #25382f;
-}
-
-
-/* Responsive */
-@media (max-width: 768px) {
-  #reservationForm {
-    flex-direction: column;
-  }
-  iframe {
-    height: 150px;
-  }
-}
-
-/* Animations */
-#reservationForm input:focus {
-  border-color: var(--gold);
-  box-shadow: 0 0 8px rgba(224, 165, 38, 0.5);
-  transition: 0.3s;
-}
-
-#reservationForm button {
-  transition: transform 0.2s ease-in-out;
-}
-
-#reservationForm button:hover {
-  transform: scale(1.05);
-}
 
 
 
 /*AFD-7 : Styles Contact*/
 
 
-body {
-  font-family: 'Segoe UI', sans-serif;
-  background: #fdfdfd;
-}
 
-h2 {
-  color: #6a0dad;
-}
-
-footer a {
-  text-decoration: none;
-  font-weight: bold;
-}
-
-footer a:hover {
-  text-decoration: underline;
-  color: #fff;
-}
-
-footer a:hover i {
-  color: #fff;
-}
-
-/* Animation au survol des icônes */
-footer a i {
-  transition: transform 0.3s ease, color 0.3s ease;
-}
-
-footer a:hover i {
-  transform: scale(1.2) rotate(10deg);
-  color: #ffc107; 
-}
-
-/* Apparition progressive du footer */
-footer {
-  animation: fadeInUp 1s ease-in-out;
-}
-
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
 
 
 /*Footer*/
