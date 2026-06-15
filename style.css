@@ -1,9 +1,25 @@
 
 
 /*AFD-1 : Styles Menu*/
-:root{  --cream: #111111; --cream-scroll:#1a1a1a; --accent:goldenrod; --text-dark:white; --text-muted: rgba(255, 255, 255, 0,45); --nav-height:68px; --sidbar-width:280px; --easing:cubic-bezier(0.4, 0, 0.2, 1);
+:root {
+  --cream: #111111;
+  --cream-scroll: #1a1a1a;
+  --accent: goldenrod;
+  --text-dark: white;
+  --text-muted: rgba(255, 255, 255, 0.45);
+  --nav-height: 68px;
+  --sidbar-width: 280px;
+  --easing: cubic-bezier(0.4, 0, 0.2, 1);
+  --bg-menu: #1a1a1a;
+  --charcoal: #2A2118;
+  --terracotta: #D9622B;
+  --gold: #E0A526;
+  --deepgreen: #2F4A3E;
+  --line: rgba(42,33,24,0.12);
+  --bg-services: #FBF2E4;
+  --bg-galeries: #2F4A3E;
 }
-
+  
 *, *::before,*::after {box-sizing: border-box; margin:0; padding:0;}
 
 body{font-family:'Segoe UI', system-ui, sans-serif; background: var(--cream); color: var(--text-dark); padding-top: var(--nav-height); min-height: 100vh;}
@@ -63,21 +79,6 @@ nav ul li a.is-active { color: rgb(38, 37, 33); background: rgba(218, 165, 32, 0
 
 
 /*AFD-4 : Styles Services*/
-
-:root{
-  
-    --charcoal: #2A2118;
-    --terracotta: #D9622B;
-    --gold: #E0A526;
-    --deepgreen: #2F4A3E;
-    --line: rgba(42,33,24,0.12);
-
-    /* Couleur de fond propre à chaque section */
-    --bg-menu: #1a1a1a;       /* menu / header */
-    --bg-services: #FBF2E4;   /* crème clair  */
-    --bg-galeries: #2F4A3E;   /* vert profond */
-  }
-  
   .services{
     background: var(--bg-services);
     padding: 5rem 1.5rem;
