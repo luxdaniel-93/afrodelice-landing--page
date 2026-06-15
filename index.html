@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AfroDélice — Nos Plats</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<section id="nos-plats" aria-label="Nos plats">
+
+  <!-- HEADER -->
+  <p class="plats-eyebrow">Saveurs authentiques</p>
+  <h2 class="plats-title">Nos Plats</h2>
+  <p class="plats-subtitle">
+    Voyagez à travers les cuisines d'Afrique, très délicieux
+  </p>
+
+  <!-- FILTRES -->
+  <div class="plats-filters" role="group" aria-label="Filtrer par catégorie">
+    <button class="filter-btn active" onclick="filterPlats(this, 'tous')">Tous</button>
+    <button class="filter-btn" onclick="filterPlats(this, 'entree')">Entrées</button>
+    <button class="filter-btn" onclick="filterPlats(this, 'plat')">Plats principaux</button>
+    <button class="filter-btn" onclick="filterPlats(this, 'dessert')">Desserts</button>
+    <button class="filter-btn" onclick="filterPlats(this, 'boisson')">Boissons</button>
+  </div>
+
+  <!-- GRID -->
+  <div class="plats-grid" id="platsGrid">
+
+    <!-- ENTRÉES -->
+    <article class="plat-card" data-cat="entree">
+      <div class="plat-img-wrap">
+        <img src="images/accra.jpg" alt="Accra de haricot" loading="lazy">
+        <span class="plat-badge">Entrée</span>
+      </div>
+      <div class="plat-body">
+        <h3 class="plat-name">Accra de haricot</h3>
+        <p class="plat-desc">Beignets croustillants de haricots épicés</p>
+        <div class="plat-footer">
+          <p class="plat-price">2 500 <small>FCFA</small></p>
+          <a href="#formulaire-reservation" class="btn-reserver">Réserver</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="plat-card" data-cat="entree">
+      <div class="plat-img-wrap">
+        <img src="images/samoussas.jpg" alt="Samoussas africains" loading="lazy">
+        <span class="plat-badge">Entrée</span>
+      </div>
+      <div class="plat-body">
+        <h3 class="plat-name">Samoussas africains</h3>
+        <p class="plat-desc">Farcis au bœuf épicé</p>
+        <div class="plat-footer">
+          <p class="plat-price">3 000 <small>FCFA</small></p>
+          <a href="#formulaire-reservation" class="btn-reserver">Réserver</a>
+        </div>
+      </div>
+    </article>
+
+    <!-- PLATS -->
+    <article class="plat-card" data-cat="plat">
+      <div class="plat-img-wrap">
+        <img src="images/thieboudienne.jpg" alt="Thiéboudiènne" loading="lazy">
+        <span class="plat-badge plat-badge--pop">⭐ Populaire</span>
+      </div>
+      <div class="plat-body">
+        <h3 class="plat-name">Thiéboudiènne</h3>
+        <p class="plat-desc">Riz au poisson sénégalais</p>
+        <div class="plat-footer">
+          <p class="plat-price">6 500 <small>FCFA</small></p>
+          <a href="#formulaire-reservation" class="btn-reserver">Réserver</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="plat-card" data-cat="plat">
+      <div class="plat-img-wrap">
+        <img src="images/poulet-yassa.jpg" alt="Poulet Yassa" loading="lazy">
+        <span class="plat-badge plat-badge--pop">⭐ Populaire</span>
+      </div>
+      <div class="plat-body">
+        <h3 class="plat-name">Poulet Yassa</h3>
+        <p class="plat-desc">Citron, oignons caramélisés</p>
+        <div class="plat-footer">
+          <p class="plat-price">7 000 <small>FCFA</small></p>
+          <a href="#formulaire-reservation" class="btn-reserver">Réserver</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="plat-card" data-cat="plat">
+      <div class="plat-img-wrap">
+        <img src="images/mafe.jpg" alt="Mafé bœuf" loading="lazy">
+        <span class="plat-badge">Plat</span>
+      </div>
+      <div class="plat-body">
+        <h3 class="plat-name">Mafé bœuf</h3>
+        <p class="plat-desc">Sauce arachide</p>
+        <div class="plat-footer">
+          <p class="plat-price">6 800 <small>FCFA</small></p>
+          <a href="#formulaire-reservation" class="btn-reserver">Réserver</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="plat-card" data-cat="plat">
+      <div class="plat-img-wrap">
+        <img src="images/egusi.jpg" alt="Egusi Soup" loading="lazy">
+        <span class="plat-badge">Plat</span>
+      </div>
+      <div class="plat-body">
+        <h3 class="plat-name">Egusi Soup</h3>
+        <p class="plat-desc">Soupe nigériane traditionnelle</p>
+        <div class="plat-footer">
+          <p class="plat-price">5 500 <small>FCFA</small></p>
+          <a href="#formulaire-reservation" class="btn-reserver">Réserver</a>
+        </div>
+      </div>
+    </article>
+
+    <!-- DESSERT -->
+    <article class="plat-card" data-cat="dessert">
+      <div class="plat-img-wrap">
+        <img src="images/thiakry.jpg" alt="Thiakry" loading="lazy">
+        <span class="plat-badge">Dessert</span>
+      </div>
+      <div class="plat-body">
+        <h3 class="plat-name">Thiakry</h3>
+        <p class="plat-desc">Semoule de mil sucrée</p>
+        <div class="plat-footer">
+          <p class="plat-price">2 800 <small>FCFA</small></p>
+          <a href="#formulaire-reservation" class="btn-reserver">Réserver</a>
+        </div>
+      </div>
+    </article>
+
+    <!-- BOISSONS -->
+    <article class="plat-card" data-cat="boisson">
+      <div class="plat-img-wrap">
+        <img src="images/bissap.jpg" alt="Bissap" loading="lazy">
+        <span class="plat-badge">Boisson</span>
+      </div>
+      <div class="plat-body">
+        <h3 class="plat-name">Bissap</h3>
+        <p class="plat-desc">Hibiscus frais</p>
+        <div class="plat-footer">
+          <p class="plat-price">1 500 <small>FCFA</small></p>
+          <a href="#formulaire-reservation" class="btn-reserver">Réserver</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="plat-card" data-cat="boisson">
+      <div class="plat-img-wrap">
+        <img src="images/vin.jpg" alt="Vin africain" loading="lazy">
+        <span class="plat-badge">Boisson</span>
+      </div>
+      <div class="plat-body">
+        <h3 class="plat-name">Vin africain</h3>
+        <p class="plat-desc">Vin traditionnel</p>
+        <div class="plat-footer">
+          <p class="plat-price">1 500 <small>FCFA</small></p>
+          <a href="#formulaire-reservation" class="btn-reserver">Réserver</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="plat-card" data-cat="boisson">
+      <div class="plat-img-wrap">
+        <img src="images/coca.jpg" alt="Coca-Cola" loading="lazy">
+        <span class="plat-badge">Boisson</span>
+      </div>
+      <div class="plat-body">
+        <h3 class="plat-name">Coca-Cola</h3>
+        <p class="plat-desc">Boisson gazeuse</p>
+        <div class="plat-footer">
+          <p class="plat-price">1 500 <small>FCFA</small></p>
+          <a href="#formulaire-reservation" class="btn-reserver">Réserver</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="plat-card" data-cat="boisson">
+      <div class="plat-img-wrap">
+        <img src="images/fanta.jpg" alt="Fanta" loading="lazy">
+        <span class="plat-badge">Boisson</span>
+      </div>
+      <div class="plat-body">
+        <h3 class="plat-name">Fanta</h3>
+        <p class="plat-desc">Boisson orange</p>
+        <div class="plat-footer">
+          <p class="plat-price">1 500 <small>FCFA</small></p>
+          <a href="#formulaire-reservation" class="btn-reserver">Réserver</a>
+        </div>
+      </div>
+    </article>
+
+  </div>
+
+  <!-- CTA -->
+  <div class="plats-cta">
+    <a href="#formulaire-reservation" class="btn-carte-complete">
+      Voir la carte complète & réserver →
+    </a>
+  </div>
+
+</section>
+
+<script src="js/script.js"></script>
+</body>
+</html>
