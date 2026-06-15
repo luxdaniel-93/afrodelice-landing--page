@@ -52,269 +52,206 @@
 
 <!-- AFD-3 : Section Plats -->
 
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+<section id="nos-plats" aria-label="Nos plats">
 
-    /* ============================
-       SECTION NOS PLATS
-    ============================ */
-    #nos-plats {
-      background: #1a0a00;
-      padding: 80px 24px;
-      font-family: 'Inter', sans-serif;
-    }
+  <!-- HEADER -->
+  <p class="plats-eyebrow">Saveurs authentiques</p>
+  <h2 class="plats-title">Nos Plats</h2>
+  <p class="plats-subtitle">
+    Voyagez à travers les cuisines d'Afrique, très délicieux
+  </p>
 
-    /* En-tête de section */
-    .plats-eyebrow {
-      text-align: center;
-      font-size: 11px;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-      color: #D4A843;
-      margin-bottom: 10px;
-    }    
-    .plats-title {
-      text-align: center;
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(28px, 5vw, 44px);
-      font-weight: 700;
-      color: #FFF8EE;
-      margin-bottom: 8px;
-      line-height: 1.15;
-    }
+  <!-- FILTRES -->
+  <div class="plats-filters" role="group" aria-label="Filtrer par catégorie">
+    <button class="filter-btn active" onclick="filterPlats(this, 'tous')">Tous</button>
+    <button class="filter-btn" onclick="filterPlats(this, 'entree')">Entrées</button>
+    <button class="filter-btn" onclick="filterPlats(this, 'plat')">Plats principaux</button>
+    <button class="filter-btn" onclick="filterPlats(this, 'dessert')">Desserts</button>
+    <button class="filter-btn" onclick="filterPlats(this, 'boisson')">Boissons</button>
+  </div>
 
-    .plats-subtitle {
-      text-align: center;
-      font-size: 14px;
-      color: #9A7A5A;
-      margin-bottom: 40px;
-    }
+  <!-- GRID -->
+  <div class="plats-grid" id="platsGrid">
 
-    /* ============================
-       FILTRES CATÉGORIES
-    ============================ */
-    .plats-filters {
-      display: flex;
-      justify-content: center;
-      gap: 10px;
-      flex-wrap: wrap;
-      margin-bottom: 48px;
-    }
+    <!-- ENTRÉES -->
+    <article class="plat-card" data-cat="entree">
+      <div class="plat-img-wrap">
+        <img src="assets/accra.jpg" alt="Accra de haricot" loading="lazy">
+        <span class="plat-badge">Entrée</span>
+      </div>
+      <div class="plat-body">
+        <h3 class="plat-name">Accra de haricot</h3>
+        <p class="plat-desc">Beignets croustillants de haricots épicés</p>
+        <div class="plat-footer">
+          <p class="plat-price">2 500 <small>FCFA</small></p>
+          <a href="#formulaire-reservation" class="btn-reserver">Réserver</a>
+        </div>
+      </div>
+    </article>
 
-    .filter-btn {
-      background: transparent;
-      border: 1px solid #4A2E0A;
-      color: #9A7A5A;
-      padding: 8px 20px;
-      border-radius: 20px;
-      font-size: 13px;
-      cursor: pointer;
-      transition: border-color 0.25s, color 0.25s, background 0.25s;
-      font-family: 'Inter', sans-serif;
-    }
+    <article class="plat-card" data-cat="entree">
+      <div class="plat-img-wrap">
+        <img src="assets/samoussas.jpg" alt="Samoussas africains" loading="lazy">
+        <span class="plat-badge">Entrée</span>
+      </div>
+      <div class="plat-body">
+        <h3 class="plat-name">Samoussas africains</h3>
+        <p class="plat-desc">Farcis au bœuf épicé</p>
+        <div class="plat-footer">
+          <p class="plat-price">3 000 <small>FCFA</small></p>
+          <a href="#formulaire-reservation" class="btn-reserver">Réserver</a>
+        </div>
+      </div>
+    </article>
 
-    .filter-btn:hover {
-      border-color: #D4A843;
-      color: #D4A843;
-    }
+    <!-- PLATS -->
+    <article class="plat-card" data-cat="plat">
+      <div class="plat-img-wrap">
+        <img src="assets/thieboudienne.jpg" alt="Thiéboudiènne" loading="lazy">
+        <span class="plat-badge plat-badge--pop">⭐ Populaire</span>
+      </div>
+      <div class="plat-body">
+        <h3 class="plat-name">Thiéboudiènne</h3>
+        <p class="plat-desc">Riz au poisson sénégalais</p>
+        <div class="plat-footer">
+          <p class="plat-price">6 500 <small>FCFA</small></p>
+          <a href="#formulaire-reservation" class="btn-reserver">Réserver</a>
+        </div>
+      </div>
+    </article>
 
-    .filter-btn.active {
-      background: #D4A843;
-      border-color: #D4A843;
-      color: #1a0a00;
-      font-weight: 500;
-    }
+    <article class="plat-card" data-cat="plat">
+      <div class="plat-img-wrap">
+        <img src="assets/poulet-yassa.jpg" alt="Poulet Yassa" loading="lazy">
+        <span class="plat-badge plat-badge--pop">⭐ Populaire</span>
+      </div>
+      <div class="plat-body">
+        <h3 class="plat-name">Poulet Yassa</h3>
+        <p class="plat-desc">Citron, oignons caramélisés</p>
+        <div class="plat-footer">
+          <p class="plat-price">7 000 <small>FCFA</small></p>
+          <a href="#formulaire-reservation" class="btn-reserver">Réserver</a>
+        </div>
+      </div>
+    </article>
 
-    /* ============================
-       GRILLE DE CARTES
-    ============================ */
-    .plats-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-      gap: 24px;
-      max-width: 980px;
-      margin: 0 auto;
-    }
+    <article class="plat-card" data-cat="plat">
+      <div class="plat-img-wrap">
+        <img src="assets/mafe.jpg" alt="Mafé bœuf" loading="lazy">
+        <span class="plat-badge">Plat</span>
+      </div>
+      <div class="plat-body">
+        <h3 class="plat-name">Mafé bœuf</h3>
+        <p class="plat-desc">Sauce arachide</p>
+        <div class="plat-footer">
+          <p class="plat-price">6 800 <small>FCFA</small></p>
+          <a href="#formulaire-reservation" class="btn-reserver">Réserver</a>
+        </div>
+      </div>
+    </article>
 
-    /* ============================
-       CARTE PLAT
-    ============================ */
-    .plat-card {
-      background: #2A1200;
-      border: 1px solid #3D2010;
-      border-radius: 16px;
-      overflow: hidden;
-      cursor: pointer;
-      /* Animation d'entrée */
-      opacity: 0;
-      transform: translateY(24px);
-      animation: fadeUp 0.5s ease forwards;
-      transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
-    }  
-    .plat-card:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 20px 48px rgba(212, 168, 67, 0.20);
-      border-color: #D4A843;
-    }
+    <article class="plat-card" data-cat="plat">
+      <div class="plat-img-wrap">
+        <img src="assets/egusi.jpg" alt="Egusi Soup" loading="lazy">
+        <span class="plat-badge">Plat</span>
+      </div>
+      <div class="plat-body">
+        <h3 class="plat-name">Egusi Soup</h3>
+        <p class="plat-desc">Soupe nigériane traditionnelle</p>
+        <div class="plat-footer">
+          <p class="plat-price">5 500 <small>FCFA</small></p>
+          <a href="#formulaire-reservation" class="btn-reserver">Réserver</a>
+        </div>
+      </div>
+    </article>
 
-    /* Image */
-    .plat-img-wrap {
-      position: relative;
-      width: 100%;
-      height: 180px;
-      overflow: hidden;
-      background: #3D2010;
-    }
+    <!-- DESSERT -->
+    <article class="plat-card" data-cat="dessert">
+      <div class="plat-img-wrap">
+        <img src="assets/thiakry.jpg" alt="Thiakry" loading="lazy">
+        <span class="plat-badge">Dessert</span>
+      </div>
+      <div class="plat-body">
+        <h3 class="plat-name">Thiakry</h3>
+        <p class="plat-desc">Semoule de mil sucrée</p>
+        <div class="plat-footer">
+          <p class="plat-price">2 800 <small>FCFA</small></p>
+          <a href="#formulaire-reservation" class="btn-reserver">Réserver</a>
+        </div>
+      </div>
+    </article>
 
-    .plat-img-wrap img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform 0.45s ease;
-    }
+    <!-- BOISSONS -->
+    <article class="plat-card" data-cat="boisson">
+      <div class="plat-img-wrap">
+        <img src="assets/bissap.jpg" alt="Bissap" loading="lazy">
+        <span class="plat-badge">Boisson</span>
+      </div>
+      <div class="plat-body">
+        <h3 class="plat-name">Bissap</h3>
+        <p class="plat-desc">Hibiscus frais</p>
+        <div class="plat-footer">
+          <p class="plat-price">1 500 <small>FCFA</small></p>
+          <a href="#formulaire-reservation" class="btn-reserver">Réserver</a>
+        </div>
+      </div>
+    </article>
 
-    .plat-card:hover .plat-img-wrap img {
-      transform: scale(1.08);
-    }
+    <article class="plat-card" data-cat="boisson">
+      <div class="plat-img-wrap">
+        <img src="assets/vin.jpg" alt="Vin africain" loading="lazy">
+        <span class="plat-badge">Boisson</span>
+      </div>
+      <div class="plat-body">
+        <h3 class="plat-name">Vin africain</h3>
+        <p class="plat-desc">Vin traditionnel</p>
+        <div class="plat-footer">
+          <p class="plat-price">1 500 <small>FCFA</small></p>
+          <a href="#formulaire-reservation" class="btn-reserver">Réserver</a>
+        </div>
+      </div>
+    </article>
 
-    /* Badge catégorie */
-    .plat-badge {
-      position: absolute;
-      top: 12px;
-      left: 12px;
-      background: #D4A843;
-      color: #1a0a00;
-      font-size: 10px;
-      font-weight: 500;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-      padding: 4px 10px;
-      border-radius: 12px;
-    }
+    <article class="plat-card" data-cat="boisson">
+      <div class="plat-img-wrap">
+        <img src="assets/coca.jpg" alt="Coca-Cola" loading="lazy">
+        <span class="plat-badge">Boisson</span>
+      </div>
+      <div class="plat-body">
+        <h3 class="plat-name">Coca-Cola</h3>
+        <p class="plat-desc">Boisson gazeuse</p>
+        <div class="plat-footer">
+          <p class="plat-price">1 500 <small>FCFA</small></p>
+          <a href="#formulaire-reservation" class="btn-reserver">Réserver</a>
+        </div>
+      </div>
+    </article>
 
-    .plat-badge--pop {
-      background: #C0392B;
-      color: #FFEEEA;
-    }
+    <article class="plat-card" data-cat="boisson">
+      <div class="plat-img-wrap">
+        <img src="assets/fanta.jpg" alt="Fanta" loading="lazy">
+        <span class="plat-badge">Boisson</span>
+      </div>
+      <div class="plat-body">
+        <h3 class="plat-name">Fanta</h3>
+        <p class="plat-desc">Boisson orange</p>
+        <div class="plat-footer">
+          <p class="plat-price">1 500 <small>FCFA</small></p>
+          <a href="#formulaire-reservation" class="btn-reserver">Réserver</a>
+        </div>
+      </div>
+    </article>
 
-    /* Corps de la carte */
-    .plat-body {
-      padding: 16px;
-    }
+  </div>
 
-    .plat-name {
-      font-family: 'Playfair Display', serif;
-      font-size: 17px;
-      font-weight: 500;
-      color: #FFF8EE;
-      margin-bottom: 6px;
-      line-height: 1.3;
-    }
+  <!-- CTA -->
+  <div class="plats-cta">
+    <a href="#formulaire-reservation" class="btn-carte-complete">
+      Voir la carte complète & réserver →
+    </a>
+  </div>
 
-    .plat-desc {
-      font-size: 12px;
-      color: #7A5A3A;
-      margin-bottom: 16px;
-      line-height: 1.6;
-    }
-
-    /* Pied de carte : prix + bouton */
-    .plat-footer {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-
-    .plat-price {
-      font-size: 20px;
-      font-weight: 500;
-      color: #D4A843;
-    }
-
-    .plat-price small {
-      font-size: 11px;
-      color: #7A5A3A;
-      margin-left: 3px;
-    }
-
-    .btn-reserver {
-      background: #D4A843;
-      border: none;
-      color: #1a0a00;
-      font-size: 12px;
-      font-weight: 500;
-      padding: 8px 14px;
-      border-radius: 8px;
-      cursor: pointer;
-      font-family: 'Inter', sans-serif;
-      transition: background 0.2s, transform 0.15s;
-    }
-
-    .btn-reserver:hover {
-      background: #E8BC50;
-      transform: scale(1.05);
-    }
-
-    /* Carte masquée lors du filtre */
-    .plat-card--hidden {
-      display: none !important;
-    }
-
-    /* ============================
-       ANIMATION FADE-UP
-    ============================ */
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(24px); }
-      to   { opacity: 1; transform: translateY(0); }
-    }   
-    /* ============================
-       APPEL À L'ACTION
-    ============================ */
-    .plats-cta {
-      text-align: center;
-      margin-top: 52px;
-    }
-
-    .btn-carte-complete {
-      background: transparent;
-      border: 1.5px solid #D4A843;
-      color: #D4A843;
-      font-size: 14px;
-      font-family: 'Inter', sans-serif;
-      padding: 13px 32px;
-      border-radius: 6px;
-      cursor: pointer;
-      letter-spacing: 0.5px;
-      transition: background 0.25s, color 0.25s;
-      text-decoration: none;
-      display: inline-block;
-    }
-
-    .btn-carte-complete:hover {
-      background: #D4A843;
-      color: #1a0a00;
-    }
-
-    /* ============================
-       RESPONSIVE
-    ============================ */
-    @media (max-width: 480px) {
-      .plats-grid {
-        grid-template-columns: 1fr 1fr;
-        gap: 14px;
-      }
-      .plat-img-wrap { height: 130px; }
-    }
-
-    @media (max-width: 360px) {
-      .plats-grid { grid-template-columns: 1fr; }
-    }
-
-    /* Respect du mode réduit en animations */
-    @media (prefers-reduced-motion: reduce) {
-      .plat-card { animation: none; opacity: 1; transform: none; }
-      .plat-card:hover { transform: none; }
-      .plat-img-wrap img { transition: none; }
-    }
+</section>
 
  <!-- AFD-4 : Section Services -->
 
@@ -451,7 +388,36 @@
  <!-- AFD-6 : Section Réservation -->
 
 
-
+<section id="reservation" class="container py-5">
+        <h2 class="text-center mb-4">Réservez une table</h2>
+        <form id="reservationForm" class="row g-3">
+            <div class="col-md-6">
+                <label for="name" class="form-label">Nom</label>
+                <input type="text" id="name" name="name" class="form-control" required>
+            </div>
+            <div class="col-md-6">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" id="email" name="email" class="form-control" required>
+            </div>
+            <div class="col-md-6">
+                <label for="date" class="form-label">Date</label>
+                <input type="date" id="date" name="date" class="form-control" required>
+            </div>
+            <div class="col-md-6">
+                <label for="time" class="form-label">Heure</label>
+                <input type="time" id="time" name="time" class="form-control" required>
+            </div>
+            <div class="col-md-6">
+                <label for="guests" class="form-label">Nombre de personnes</label>
+                <input type="number" id="guests" name="guests" class="form-control" min="1" required>
+            </div>
+            <div class="col-12">
+                <button type="submit" class="btn btn-success w-100">Réserver</button>
+            </div>
+        </form>
+        <!-- Zone pour message -->
+        <div id="formMessage" class="mt-3"></div>
+    </section>
 
 
 
