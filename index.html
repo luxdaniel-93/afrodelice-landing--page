@@ -16,29 +16,6 @@
   
 
 <!-- AFD-1 : Section Menu -->
-  <header>
-        <nav>
-
-              <button class="menu" id="menu-button" aria-label="Ouvrir le menu" aria-expanded="false">
-                  <span></span>
-                  <span></span>
-                  <span></span>
-              </button> 
-
-            <div class="logo">
-            <img src="assets/logo.png" alt="Afro delice">
-            </div>
-            <ul>
-                <li><a href="#">Acceuil</a></li>
-                <li><a href="#">Nos plats</a></li>
-                <li><a href="#">Nos services</a></li>
-                <li><a href="#">À propos de nous</a></li>
-                <li><a href="#">Galerie</a></li>
-                <li><a href="#">Reservations</a></li>
-                <li><a href="#">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
   
 
 
@@ -52,6 +29,24 @@
 
 <!-- AFD-3 : Section Plats -->
 
+<section id="nos-plats" aria-label="Nos plats">
+  
+    <!-- HEADER -->
+    <p class="plats-eyebrow">Saveurs authentiques</p>
+    <h2 class="plats-title">Nos Plats</h2>
+    <p class="plats-subtitle">
+      Voyagez à travers les cuisines d'Afrique, très délicieux
+    </p>
+  
+    <!-- FILTRES -->
+    <div class="plats-filters" role="group" aria-label="Filtrer par catégorie">
+      <button class="filter-btn active" onclick="filterPlats(this, 'tous')">Tous</button>
+      <button class="filter-btn" onclick="filterPlats(this, 'entree')">Entrées</button>
+      <button class="filter-btn" onclick="filterPlats(this, 'plat')">Plats principaux</button>
+      <button class="filter-btn" onclick="filterPlats(this, 'dessert')">Desserts</button>
+      <button class="filter-btn" onclick="filterPlats(this, 'boisson')">Boissons</button>
+
+
 
  <!-- AFD-4 : Section Services -->
 
@@ -64,6 +59,7 @@
         AfroDélice vous accompagne avant, pendant et après votre repas —
         à table, chez vous ou lors de vos événements.
       </p>
+
     </div>
 
     <div class="services__grid">
@@ -119,6 +115,7 @@
 
  <!-- AFD-5 : Section Galerie -->
 
+
         <section class="galeries">
             <h1>Bienvenue dans notre Galeries</h1>
 
@@ -151,12 +148,17 @@
             <img id="lightbox-img" src="" alt="Image agrandie">
         </div>
 
+
+ 
+
+
         <!-- Petit script pour la galerie -->
         <script>
             // Bouton Voir plus / Réduire
             function voirPlus() {
                 const grille = document.querySelector('.galeries_grid');
                 const bouton = document.querySelector('.btn-voir-plus');
+
 
                 grille.classList.toggle('tout-voir');
 
@@ -183,6 +185,7 @@
             }
         </script>
 
+       
 
    
  <!-- AFD-6 : Section Réservation -->
@@ -225,33 +228,6 @@
 
  <!-- AFD-7 : Section Contact/Footer -->
 
-    <footer class="bg-dark text-white text-center py-4 mt-5">
-            <h3>Contactez-nous</h3>
-            <p>📞 +229 90 00 00 00</p>
-            <p>📧 joinus@afrodelice.com</p>
-            <p>📍 Rue des Délices, Cotonou, Bénin</p>
-            <div class="container-fluid">
-                <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3965.015692699377!2d2.3625700747653395!3d6.39197629359854!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x10235765334da7d3%3A0xb5fdd09e7eb56691!2sCENTRE%20DE%20FORMATION%20TECHNIQUE%20ET%20PROFESSIONNELLE%20L2C%20(CFTP-L2C)%20AU%20B%C3%89NIN!5e0!3m2!1sfr!2sbj!4v1781257508284!5m2!1sfr!2sbj"
-                    class="w-100 rounded-3" height="250" style="border:0;" allowfullscreen loading="lazy"
-                    referrerpolicy="no-referrer-when-downgrade">
-                </iframe>
-            </div>
-            <div class="mb-3">
-                <a href="#" class="text-info me-3 fs-4">
-                    <i class="fab fa-facebook"></i>
-                </a>
-                <a href="#" class="text-danger me-3 fs-4">
-                    <i class="fab fa-instagram"></i>
-                </a>
-                <a href="#" class="text-primary fs-4">
-                    <i class="fab fa-twitter"></i>
-                </a>
-            </div>
-            <p>&copy; 2026 - AfroDelice. Tous droits réservés.</p>
-        </footer>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="script.js"></script>
-
+   
 </body>
 </html>

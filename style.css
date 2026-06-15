@@ -28,19 +28,8 @@ header{position:fixed; top:0; left: 0; right: 0; z-index: 200; height: var(--nav
 
 header .is-scrolled{ background: var(--cream-scroll); border-bottom-color: rgba(218, 165, 32, 0.3); box-shadow: 0 2px 32px rgba(0, 0, 0, 0.5);}
 
-nav{display: flex; align-items: center; justify-content: space-between; height:100%; padding:0 clamp(16px, 4vw, 48px); max-width: 1280px; margin:0 auto; }
-
-.logo{flex-shrink: 0; display: flex; align-items: center; }
-.logo img{height: 44px; width: auto; display: block;}
-
-nav ul{display: flex; align-items: center; gap: 4px; list-style: none;}
-nav ul li a {position: relative; display: block; padding: 6px 12px; font-size: 13px; font-weight: 500; letter-spacing: 0.04em; color:var(--text-muted); text-decoration: none; white-space: nowrap; transition: color 0.25s var(--easing); }
-nav ul li a::after{content: ''; position: absolute; bottom: 0; left:12px; right: 12px; height: 2px; background: goldenrod; border-radius: 2px; transform: scaleX(0); transform-origin: center; transition: transform 0.3s var(--easing);}
-
-nav ul li a:hover{color: white;}
-nav ul li a:hover::after {transform: scaleX(0.7);}
-nav ul li a.is-active{color: goldenrod;}
-nav ul li a.is-active::after{transform: scaleX(1);}
+/*AFD-3 : Styles Plats*/
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 .menu{display: none; flex-direction: column; justify-content: center; gap: 5px; width: 40px; height:40px; background: none; border: none; cursor: pointer; padding:8px; }
 .menu span{ display: block; height:2px; background: white; border-radius: 2px; transform-origin:center; transition: transform 0.4s var(--easing), opacity 0.3s , widht 0.3s var(--easing);}
@@ -284,99 +273,19 @@ nav ul li a.is-active { color: rgb(38, 37, 33); background: rgba(218, 165, 32, 0
 
 
 
+    .btn-reserver {
+      background: #D4A843;
+      border: none;
+      color: #1a0a00;
+      font-size: 12px;
+      font-weight: 500;
+      padding: 8px 14px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-family: 'Inter', sans-serif;
+      transition: background 0.2s, transform 0.15s;
 
-
-/*AFD-5 : Styles Galerie*/
-
-.galeries{
-    background: var(--bg-galeries);
-    padding: 40px 20px;
-}
-
-
-.galeries h1{
-    text-align: center;
-    margin-bottom: 30px;
-}
-
-.galeries_grid{
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 12px;
-    max-width: 1100px;
-    margin: 0 auto;
-}
-
-.galeries_grid img{
-    width: 100%;
-    height: 220px;
-    object-fit: cover;
-    border-radius: 10px;
-    cursor: pointer;
-    transition: transform 0.3s var(--easing);
-}
-
-.galeries_grid img:hover{
-    transform: scale(1.03);
-}
-
-.galeries_grid img.cachee{
-    display: none;
-}
-
-.galeries_grid.tout-voir img.cachee{
-    display: block;
-}
-
-.btn-voir-plus{
-    display: block;
-    margin: 30px auto 0;
-    padding: 12px 28px;
-    background: var(--gold);
-    color: var(--charcoal);
-    border: none;
-    border-radius: 8px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: transform 0.2s ease, background 0.2s ease;
-}
-
-.btn-voir-plus:hover{
-    transform: translateY(-2px);
-    background: #c9911f;
-}
-
-/* Lightbox */
-#lightbox{
-    display: none;
-    position: fixed;
-    inset: 0;
-    z-index: 999;
-    background: rgba(0, 0, 0, 0.85);
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
-    cursor: zoom-out;
-}
-
-#lightbox.ouvert{
-    display: flex;
-}
-
-#lightbox img{
-    max-width: 90%;
-    max-height: 90%;
-    border-radius: 8px;
-}
-
-@media (max-width: 980px){
-    .galeries_grid{ grid-template-columns: repeat(3, 1fr); }
-}
-
-@media (max-width: 600px){
-    .galeries_grid{ grid-template-columns: repeat(2, 1fr); }
-    .galeries_grid img{ height: 150px; }
-}
+/*AFD-4 : Styles Services*/
 
 
 /*AFD-6 : Styles Réservation*/
@@ -453,55 +362,11 @@ nav ul li a.is-active { color: rgb(38, 37, 33); background: rgba(218, 165, 32, 0
 }
 
 
+/*AFD-6 : Styles Réservation*/
+
+
 
 /*AFD-7 : Styles Contact/Footer*/
 
 
-body {
-  font-family: 'Segoe UI', sans-serif;
-  background: #fdfdfd;
-}
 
-h2 {
-  color: #6a0dad;
-}
-
-footer a {
-  text-decoration: none;
-  font-weight: bold;
-}
-
-footer a:hover {
-  text-decoration: underline;
-  color: #fff;
-}
-
-footer a:hover i {
-  color: #fff;
-}
-
-/* Animation au survol des icônes */
-footer a i {
-  transition: transform 0.3s ease, color 0.3s ease;
-}
-
-footer a:hover i {
-  transform: scale(1.2) rotate(10deg);
-  color: #ffc107; 
-}
-
-/* Apparition progressive du footer */
-footer {
-  animation: fadeInUp 1s ease-in-out;
-}
-
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
