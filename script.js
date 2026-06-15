@@ -49,6 +49,13 @@
 
 /**AFD-6 : Section Réservation**/
 
+document.addEventListener("DOMContentLoaded", function() {
+  const form = document.getElementById('reservationForm');
+  const messageBox = document.getElementById('formMessage');
+
+  form.addEventListener('submit', function(e) {
+    e.preventDefault();
+
 
  /**AFD-7 : Section Contact**:
 
