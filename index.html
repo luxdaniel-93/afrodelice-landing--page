@@ -45,7 +45,6 @@
 
 
 
-
 <!-- AFD-2 : Section Bannière -->
 
 
@@ -54,224 +53,205 @@
 <!-- AFD-3 : Section Plats -->
 
 
-  <section id="nos-plats" aria-label="Nos plats">
-  
-    <!-- HEADER -->
-    <p class="plats-eyebrow">Saveurs authentiques</p>
-    <h2 class="plats-title">Nos Plats</h2>
-    <p class="plats-subtitle">
-      Voyagez à travers les cuisines d'Afrique, très délicieux
-    </p>
-  
-    <!-- FILTRES -->
-    <div class="plats-filters" role="group" aria-label="Filtrer par catégorie">
-      <button class="filter-btn active" onclick="filterPlats(this, 'tous')">Tous</button>
-      <button class="filter-btn" onclick="filterPlats(this, 'entree')">Entrées</button>
-      <button class="filter-btn" onclick="filterPlats(this, 'plat')">Plats principaux</button>
-      <button class="filter-btn" onclick="filterPlats(this, 'dessert')">Desserts</button>
-      <button class="filter-btn" onclick="filterPlats(this, 'boisson')">Boissons</button>
-    </div>
-  
-    <!-- GRID -->
-    <div class="plats-grid" id="platsGrid">
-  
-      <!-- ENTRÉES -->
-      <article class="plat-card" data-cat="entree">
-        <div class="plat-img-wrap">
-          <img src="assets/accra.jpg" alt="Accra de haricot" loading="lazy">
-          <span class="plat-badge">Entrée</span>
-        </div>
-        <div class="plat-body">
-          <h3 class="plat-name">Accra de haricot</h3>
-          <p class="plat-desc">Beignets croustillants de haricots épicés</p>
-          <div class="plat-footer">
-            <p class="plat-price">2 500 <small>FCFA</small></p>
-            <a href="#formulaire-reservation" class="btn-reserver">Réserver</a>
-          </div>
-        </div>
-      </article>
-  
-      <article class="plat-card" data-cat="entree">
-        <div class="plat-img-wrap">
-          <img src="assets/samoussas.jpg" alt="Samoussas africains" loading="lazy">
-          <span class="plat-badge">Entrée</span>
-        </div>
-        <div class="plat-body">
-          <h3 class="plat-name">Samoussas africains</h3>
-          <p class="plat-desc">Farcis au bœuf épicé</p>
-          <div class="plat-footer">
-            <p class="plat-price">3 000 <small>FCFA</small></p>
-            <a href="#formulaire-reservation" class="btn-reserver">Réserver</a>
-          </div>
-        </div>
-      </article>
-  
-      <!-- PLATS -->
-      <article class="plat-card" data-cat="plat">
-        <div class="plat-img-wrap">
-          <img src="assets/thieboudienne.jpg" alt="Thiéboudiènne" loading="lazy">
-          <span class="plat-badge plat-badge--pop">⭐ Populaire</span>
-        </div>
-        <div class="plat-body">
-          <h3 class="plat-name">Thiéboudiènne</h3>
-          <p class="plat-desc">Riz au poisson sénégalais</p>
-          <div class="plat-footer">
-            <p class="plat-price">6 500 <small>FCFA</small></p>
-            <a href="#formulaire-reservation" class="btn-reserver">Réserver</a>
-          </div>
-        </div>
-      </article>
-  
-      <article class="plat-card" data-cat="plat">
-        <div class="plat-img-wrap">
-          <img src="assets/poulet-yassa.jpg" alt="Poulet Yassa" loading="lazy">
-          <span class="plat-badge plat-badge--pop">⭐ Populaire</span>
-        </div>
-        <div class="plat-body">
-          <h3 class="plat-name">Poulet Yassa</h3>
-          <p class="plat-desc">Citron, oignons caramélisés</p>
-          <div class="plat-footer">
-            <p class="plat-price">7 000 <small>FCFA</small></p>
-            <a href="#formulaire-reservation" class="btn-reserver">Réserver</a>
-          </div>
-        </div>
-      </article>
-  
-      <article class="plat-card" data-cat="plat">
-        <div class="plat-img-wrap">
-          <img src="assets/mafe.jpg" alt="Mafé bœuf" loading="lazy">
-          <span class="plat-badge">Plat</span>
-        </div>
-        <div class="plat-body">
-          <h3 class="plat-name">Mafé bœuf</h3>
-          <p class="plat-desc">Sauce arachide</p>
-          <div class="plat-footer">
-            <p class="plat-price">6 800 <small>FCFA</small></p>
-            <a href="#formulaire-reservation" class="btn-reserver">Réserver</a>
-          </div>
-        </div>
-      </article>
-  
-      <article class="plat-card" data-cat="plat">
-        <div class="plat-img-wrap">
-          <img src="assets/egusi.jpg" alt="Egusi Soup" loading="lazy">
-          <span class="plat-badge">Plat</span>
-        </div>
-        <div class="plat-body">
-          <h3 class="plat-name">Egusi Soup</h3>
-          <p class="plat-desc">Soupe nigériane traditionnelle</p>
-          <div class="plat-footer">
-            <p class="plat-price">5 500 <small>FCFA</small></p>
-            <a href="#formulaire-reservation" class="btn-reserver">Réserver</a>
-          </div>
-        </div>
-      </article>
-
-    <!-- DESSERT -->
-    <article class="plat-card" data-cat="dessert">
-      <div class="plat-img-wrap">
-        <img src="assets/thiakry.jpg" alt="Thiakry" loading="lazy">
-        <span class="plat-badge">Dessert</span>
-      </div>
-      <div class="plat-body">
-        <h3 class="plat-name">Thiakry</h3>
-        <p class="plat-desc">Semoule de mil sucrée</p>
-        <div class="plat-footer">
-          <p class="plat-price">2 800 <small>FCFA</small></p>
-          <a href="#formulaire-reservation" class="btn-reserver">Réserver</a>
-        </div>
-      </div>
-    </article>
-
-    <!-- BOISSONS -->
-    <article class="plat-card" data-cat="boisson">
-      <div class="plat-img-wrap">
-        <img src="assets/bissap.jpg" alt="Bissap" loading="lazy">
-        <span class="plat-badge">Boisson</span>
-      </div>
-      <div class="plat-body">
-        <h3 class="plat-name">Bissap</h3>
-        <p class="plat-desc">Hibiscus frais</p>
-        <div class="plat-footer">
-          <p class="plat-price">1 500 <small>FCFA</small></p>
-          <a href="#formulaire-reservation" class="btn-reserver">Réserver</a>
-        </div>
-      </div>
-    </article>
-
-    <article class="plat-card" data-cat="boisson">
-      <div class="plat-img-wrap">
-        <img src="assets/vin.jpg" alt="Vin africain" loading="lazy">
-        <span class="plat-badge">Boisson</span>
-      </div>
-      <div class="plat-body">
-        <h3 class="plat-name">Vin africain</h3>
-        <p class="plat-desc">Vin traditionnel</p>
-        <div class="plat-footer">
-          <p class="plat-price">1 500 <small>FCFA</small></p>
-          <a href="#formulaire-reservation" class="btn-reserver">Réserver</a>
-        </div>
-      </div>
-    </article>
-
-    <article class="plat-card" data-cat="boisson">
-      <div class="plat-img-wrap">
-        <img src="assets/coca.jpg" alt="Coca-Cola" loading="lazy">
-        <span class="plat-badge">Boisson</span>
-      </div>
-      <div class="plat-body">
-        <h3 class="plat-name">Coca-Cola</h3>
-        <p class="plat-desc">Boisson gazeuse</p>
-        <div class="plat-footer">
-          <p class="plat-price">1 500 <small>FCFA</small></p>
-          <a href="#formulaire-reservation" class="btn-reserver">Réserver</a>
-        </div>
-      </div>
-    </article>
-
-    <article class="plat-card" data-cat="boisson">
-      <div class="plat-img-wrap">
-        <img src="assets/fanta.jpg" alt="Fanta" loading="lazy">
-        <span class="plat-badge">Boisson</span>
-      </div>
-      <div class="plat-body">
-        <h3 class="plat-name">Fanta</h3>
-        <p class="plat-desc">Boisson orange</p>
-        <div class="plat-footer">
-          <p class="plat-price">1 500 <small>FCFA</small></p>
-          <a href="#formulaire-reservation" class="btn-reserver">Réserver</a>
-        </div>
-      </div>
-    </article>
-
-  </div>
-
-  <!-- CTA -->
-  <div class="plats-cta">
-    <a href="#formulaire-reservation" class="btn-carte-complete">
-      Voir la carte complète & réserver →
-    </a>
-  </div>
-
-</section>
-
-
  <!-- AFD-4 : Section Services -->
+
+
+ <section class="services" id="services">
+    <div class="services__header">
+      <span class="services__eyebrow">Nos services</span>
+      <h2 class="services__title">Au-delà de l'assiette</h2>
+      <p class="services__subtitle">
+        AfroDélice vous accompagne avant, pendant et après votre repas —
+        à table, chez vous ou lors de vos événements.
+      </p>
+    </div>
+
+    <div class="services__grid">
+
+      <article class="service-card">
+        <div class="service-card__icon">
+            <svg viewBox="0 0 24 24"><path d="M4 19h16M6 19V9a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v10M9 19v-4h6v4"/><path d="M6 7V5a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v2"/></svg>
+          </div>
+        <h3 class="service-card__title">Réservation de table</h3>
+        <p class="service-card__text">
+          Réservez votre place en quelques clics et profitez d'une table
+          prête à votre arrivée, pour deux ou pour un grand groupe.
+        </p>
+      </article>
+
+      <article class="service-card">
+        <div class="service-card__icon">
+            <svg viewBox="0 0 24 24"><rect x="2" y="9" width="14" height="9" rx="1"/><path d="M16 12h3.5l2.5 3v3H16z"/><circle cx="6.5" cy="20" r="1.5"/><circle cx="17.5" cy="20" r="1.5"/></svg>
+          </div>
+        <h3 class="service-card__title">Livraison à domicile</h3>
+        <p class="service-card__text">
+          Recevez nos plats encore chauds, livrés rapidement où que vous
+          soyez en ville, sans perdre une once de saveur.
+        </p>
+      </article>
+
+      <article class="service-card">
+        <div class="service-card__icon">
+            <svg viewBox="0 0 24 24"><path d="M12 3v9"/><circle cx="12" cy="14" r="2"/><path d="M5 21c0-3.3 3.1-6 7-6s7 2.7 7 6"/></svg>
+          </div>
+        <h3 class="service-card__title">Événements & traiteur</h3>
+        <p class="service-card__text">
+          Mariages, anniversaires, séminaires : notre équipe compose un
+          menu africain sur mesure pour vos invités.
+        </p>
+      </article>
+
+      <article class="service-card">
+        <div class="service-card__icon">
+            <svg viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/><path d="M3 11h18"/></svg>
+          </div>
+        <h3 class="service-card__title">À emporter</h3>
+        <p class="service-card__text">
+          Commandez en ligne et passez récupérer votre repas directement
+          au comptoir, sans attente.
+        </p>
+      </article>
+
+    </div>
+  </section>
 
 
 
  <!-- AFD-5 : Section Galerie -->
 
-      
+        <section class="galeries">
+            <h1>Bienvenue dans notre Galeries</h1>
+
+            <div class="galeries_grid">
+                <!-- Les 8 photos visibles directement -->
+                <img src="assets/african_food.jpg" alt="Plat africain">
+                <img src="assets/attiékè_côtedivoire.png" alt="Attiéké de Côte d'Ivoire">
+                <img src="assets/bomiwo_du_benin.jpg" alt="Bomiwo du Bénin">
+                <img src="assets/special_dèguè_niger.jpg" alt="Dèguè du Niger">
+                <img src="assets/ouest_africanspeciality1.jpg" alt="Spécialité ouest-africaine">
+                <img src="assets/central_africanspeciality.jpg" alt="Spécialité d'Afrique centrale">
+                <img src="assets/africanspeciality1.jpg" alt="Spécialité africaine 1">
+                <img src="assets/africanspeciality2.jpg" alt="Spécialité africaine 2">
+
+                <!-- Les photos cachées (affichées au clic sur "Voir plus") -->
+                <img class="cachee" src="assets/africanspeciality3.jpg" alt="Spécialité africaine 3">
+                <img class="cachee" src="assets/original-speciality1.jpg" alt="Spécialité originale 1">
+                <img class="cachee" src="assets/original-speciality2.jpg" alt="Spécialité originale 2">
+                <img class="cachee" src="assets/ouest_africanspeciality2.jpg" alt="Spécialité ouest-africaine 2">
+                <img class="cachee" src="assets/ouest_africanspeciality3.jpg" alt="Spécialité ouest-africaine 3">
+                <img class="cachee" src="assets/west&amp;ouest_africanspeciality.jpg" alt="Spécialité ouest-africaine">
+                <img class="cachee" src="assets/west&amp;ouest_africanspeciality1.jpg" alt="Spécialité ouest-africaine">
+                <img class="cachee" src="assets/west_africanspeciality1.jpg" alt="Spécialité ouest-africaine">
+            </div>
+
+            <button class="btn-voir-plus" onclick="voirPlus()">Voir plus</button>
+        </section>
+
+        <div id="lightbox" onclick="fermerImage()">
+            <img id="lightbox-img" src="" alt="Image agrandie">
+        </div>
+
+        <!-- Petit script pour la galerie -->
+        <script>
+            // Bouton Voir plus / Réduire
+            function voirPlus() {
+                const grille = document.querySelector('.galeries_grid');
+                const bouton = document.querySelector('.btn-voir-plus');
+
+                grille.classList.toggle('tout-voir');
+
+                if (grille.classList.contains('tout-voir')) {
+                    bouton.textContent = 'Réduire';
+                } else {
+                    bouton.textContent = 'Voir plus';
+                }
+            }
+
+            // Afficher une image en grand quand on clique dessus
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImg = document.getElementById('lightbox-img');
+
+            document.querySelectorAll('.galeries_grid img').forEach(function (image) {
+                image.onclick = function () {
+                    lightboxImg.src = image.src;
+                    lightbox.classList.add('ouvert');
+                };
+            });
+
+            function fermerImage() {
+                lightbox.classList.remove('ouvert');
+            }
+        </script>
+
 
    
  <!-- AFD-6 : Section Réservation -->
+
+<section id="reservation" class="container py-5">
+        <h2 class="text-center mb-4">Réservez une table</h2>
+        <form id="reservationForm" class="row g-3">
+            <div class="col-md-6">
+                <label for="name" class="form-label">Nom</label>
+                <input type="text" id="name" name="name" class="form-control" required>
+            </div>
+            <div class="col-md-6">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" id="email" name="email" class="form-control" required>
+            </div>
+            <div class="col-md-6">
+                <label for="date" class="form-label">Date</label>
+                <input type="date" id="date" name="date" class="form-control" required>
+            </div>
+            <div class="col-md-6">
+                <label for="time" class="form-label">Heure</label>
+                <input type="time" id="time" name="time" class="form-control" required>
+            </div>
+            <div class="col-md-6">
+                <label for="guests" class="form-label">Nombre de personnes</label>
+                <input type="number" id="guests" name="guests" class="form-control" min="1" required>
+            </div>
+            <div class="col-12">
+                <button type="submit" class="btn btn-success w-100">Réserver</button>
+            </div>
+        </form>
+        <!-- Zone pour message -->
+        <div id="formMessage" class="mt-3"></div>
+    </section>
+
+
+
 
 
 
  <!-- AFD-7 : Section Contact/Footer -->
 
-  
+    <footer class="bg-dark text-white text-center py-4 mt-5">
+            <h3>Contactez-nous</h3>
+            <p>📞 +229 90 00 00 00</p>
+            <p>📧 joinus@afrodelice.com</p>
+            <p>📍 Rue des Délices, Cotonou, Bénin</p>
+            <div class="container-fluid">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3965.015692699377!2d2.3625700747653395!3d6.39197629359854!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x10235765334da7d3%3A0xb5fdd09e7eb56691!2sCENTRE%20DE%20FORMATION%20TECHNIQUE%20ET%20PROFESSIONNELLE%20L2C%20(CFTP-L2C)%20AU%20B%C3%89NIN!5e0!3m2!1sfr!2sbj!4v1781257508284!5m2!1sfr!2sbj"
+                    class="w-100 rounded-3" height="250" style="border:0;" allowfullscreen loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+            <div class="mb-3">
+                <a href="#" class="text-info me-3 fs-4">
+                    <i class="fab fa-facebook"></i>
+                </a>
+                <a href="#" class="text-danger me-3 fs-4">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="#" class="text-primary fs-4">
+                    <i class="fab fa-twitter"></i>
+                </a>
+            </div>
+            <p>&copy; 2026 - AfroDelice. Tous droits réservés.</p>
+        </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
 
 </body>
 </html>
