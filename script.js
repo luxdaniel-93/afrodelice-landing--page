@@ -69,7 +69,33 @@ window.addEventListener('resize', () => {
 
 /**AFD-2 : Section Bannière**/
 
+(function () {
+  const slides = document.querySelectorAll('.hero__bg-slide');
+  const dots   = document.querySelectorAll('.hero__dot');
+  if (!slides.length) return;
 
+  let current = 0;
+  let timer;
+
+  function goTo(n) {
+    slides[current].classList.remove('hero__bg-slide--active');
+    dots[current].classList.remove('hero__dot--active');
+    current = (n + slides.length) % slides.length;
+    slides[current].classList.add('hero__bg-slide--active');
+    dots[current].classList.add('hero__dot--active');
+  }
+
+  function next()  { goTo(current + 1); }
+  function start() { timer = setInterval(next, 5000); }
+  function stop()  { clearInterval(timer); }
+
+  // Clic sur un dot : navigation manuelle, puis reprise automatique
+  dots.forEach((dot, i) => {
+    dot.addEventListener('click', () => { stop(); goTo(i); start(); });
+  });
+
+  start();
+})();
 
 
 /**AFD-3 : Section Plats**/
@@ -115,38 +141,34 @@ window.addEventListener('resize', () => {
 
 /**AFD-6 : Section Réservation**/
 
-    let name = document.getElementById('name').value.trim();
-    let email = document.getElementById('email').value.trim();
-    let guests = parseInt(document.getElementById('guests').value, 10);
+document.getElementById('reservationForm').addEventListener('submit', function (e) {
+  e.preventDefault();
+  const form       = e.target;
+  const messageBox = document.getElementById('formMessage');
 
+  const name   = document.getElementById('name').value.trim();
+  const email  = document.getElementById('email').value.trim();
+  const guests = parseInt(document.getElementById('guests').value, 10);
 
-    // Vérification des champs
-    if (name === "" || email === "" || isNaN(guests) || guests < 1) {
-      showMessage("Veuillez remplir correctement tous les champs.", "danger");
-      return;
-    }
-
-
-    // Vérification email avec regex simple
-    let emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailPattern.test(email)) {
-      showMessage("Veuillez entrer un email valide.", "warning");
-      return;
-    }
-
-
-    showMessage("Réservation envoyée avec succès !", "success");
-    form.reset(); // On va réinitialiser le formulaire après succès
-  });
-
-  function showMessage(text, type) {
-    messageBox.innerHTML = `<div class="alert alert-${type}" role="alert">${text}</div>`;
-    // On supprime le message après 3 secondes
-    setTimeout(() => {
-      messageBox.innerHTML = "";
-    }, 3000);
+  if (name === '' || email === '' || isNaN(guests) || guests < 1) {
+    showMessage(messageBox, 'Veuillez remplir correctement tous les champs.', 'danger');
+    return;
   }
+
+  const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (!emailPattern.test(email)) {
+    showMessage(messageBox, 'Veuillez entrer un email valide.', 'warning');
+    return;
+  }
+
+  showMessage(messageBox, 'Réservation envoyée avec succès !', 'success');
+  form.reset();
 });
+
+function showMessage(box, text, type) {
+  box.innerHTML = `<div class="alert alert-${type}" role="alert">${text}</div>`;
+  setTimeout(() => { box.innerHTML = ''; }, 3000);
+}
 
  /**AFD-7 : Section Contact**:
 
